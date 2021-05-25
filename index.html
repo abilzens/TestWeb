@@ -31,6 +31,7 @@
         <li><a href="#rotet">Rotācija</a></li>
         <li><a href="#spogulis">Spoguļskats</a></li>
         <li><a href="#pareja">Pāreja</a></li>
+        <li><a href="#dinamisks">Dinamisks HTML</a></li>
       </ul>
     </div>
   </div>
@@ -64,6 +65,15 @@
     <p><a href="https://www.w3schools.com/css/css3_transitions.asp" target="_blank">https://www.w3schools.com/css/css3_transitions.asp</a></p>
 </div>
 
+<div class="container-fluid bg-2 text-center" id="dinamisks">
+    <h3 class="margin">Dinamisks HTML</h3>
+    <form>
+        <h4>Izvēlies pleķa izmēru: <input name="cik" type="number" min="2" max="6" step="2" style="color:black"></h4>
+        <input type="button" onclick="laukums(cik.value);" value="Bliezt pleķi" style="background-color: #00cb6d">
+        <table id="table"></table>
+    </form>
+</div>
+
 <script>
     window.onscroll = function() {skrollet();};
     var navbar = document.getElementById("Navbar");
@@ -74,6 +84,39 @@
         }else{
             navbar.classList.remove("sticky");
         }
+    }
+    function laukums(n){
+        /*let p=document.createElement("P");
+        p.innerHTML="Te būs pleķis ar "+n+"*"+n+" lauciņiem";
+        document.getElementById("dinamisks").appendChild(p);*/
+        /*
+        var rows = '';
+        for(var i = 0; i <= 10; i++ ){
+            rows += '<tr id = "row' + i + '"><td>...</td></tr>';
+        }
+        document.getElementById( 'table' ).innerHTML = rows;*/
+        
+        var table = "<table><tr>";
+        for(var i=1; i<=n; i++){
+            for(var j=1; j<=n; j++){
+                table += "<td>"+(j+(i-1)*n)+"</td>";
+            }
+            table += "</tr><tr>";
+        }
+        table += "</tr></table>";
+        document.getElementById( 'table' ).innerHTML = table;
+        
+        /*let p1=document.createElement("P");
+        let row=document.createElement("row");
+        row.style="width: 100%";
+        let cell=document.createElement("column");
+        cell.style="width: 40px; height: 20px";
+        
+        for(var i=1; i<=n*n; i++){
+            cell.innerHTML=i;
+            p1.appendChild(cell);
+        }
+        document.getElementById("dinamisks").appendChild(p1);*/
     }
 </script>
 </body>

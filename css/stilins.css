@@ -61,3 +61,12 @@ body {
   .sticky + .content{
       padding-top: 60px;
   }
+  table, tr, td{
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px solid black;
+    border-collapse: collapse;
+    padding: 12px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+  }
