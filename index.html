@@ -11,12 +11,12 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   
   <link rel="stylesheet" href="css/stilins.css">
-  
+ 
 </head>
 <body>
-
+ 
 <!-- Navbar -->
-<nav class="navbar navbar-default">
+<nav id="Navbar" class="navbar navbar-default">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -64,5 +64,17 @@
     <p><a href="https://www.w3schools.com/css/css3_transitions.asp" target="_blank">https://www.w3schools.com/css/css3_transitions.asp</a></p>
 </div>
 
+<script>
+    window.onscroll = function() {skrollet();};
+    var navbar = document.getElementById("Navbar");
+    var sticky = navbar.offsetTop;
+    function skrollet(){
+        if (window.pageYOffset >= sticky){
+            navbar.classList.add("sticky");
+        }else{
+            navbar.classList.remove("sticky");
+        }
+    }
+</script>
 </body>
 </html>
